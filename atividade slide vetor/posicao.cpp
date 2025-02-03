@@ -26,7 +26,7 @@ int main() {
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
             if (vetor1[i] == vetor2[j]) {
-                cout << "- Vetor1[" << i << "] é igual a Vetor2[" << j << "]" << endl;
+                cout << "- Vetor1[" << i << "] é igual a Vetor2[" << j << "]";
             }
         }
     }

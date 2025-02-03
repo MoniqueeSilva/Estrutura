@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
+using std::string;
+using std::getline;
 
 //função principal
 int main() {

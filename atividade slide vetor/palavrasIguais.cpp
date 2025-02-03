@@ -5,8 +5,7 @@
 using namespace std;
 
 int main(){
-    string palavra1;
-    string palavra2;
+    string palavra1, palavra2;
 
     cout << "Digite uma palavra: ";
     cin >> palavra1;
