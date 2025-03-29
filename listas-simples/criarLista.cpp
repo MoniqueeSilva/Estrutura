@@ -24,14 +24,32 @@ void criarLista(){
             cout << "MEMÓRIA INSUFICIANTE PARA ALOCAÇÃO";
         }else{
             listaSimples->proximo = NULL; // nó(elemento) para armazenar um valor,que não tem elemento ainda 
-            cout << "informe um valor: ";
+            cout << "INFORME UM VALOR: ";
             cin >> listaSimples->valor; // armazenar o valor no primeiro nó da lista 
         }
     }
 }
 
-int main(){
-    criarLista(); //chamada da função
+// função para adicionar elemento no inicio da lista
+void adicionarElementoInicio(){
+    if(listaSimples == NULL){ // verifica se a lista está vazia, caso esteja vai inializar uma lista com a criação
+        criarLista();
+    }else{
+        ELEMENTO *ptrTemp = (ELEMENTO*) malloc(sizeof(ELEMENTO)); // alocou um espaço na memoria para armazenar o ponteiro temporario
+        if(ptrTemp == NULL){
+            cout << "MEMÓRIA INSUFICIENTE PARA ALOCAÇÃO";
+        }else{
+            ptrTemp->proximo = NULL; // o novo elemento para a lista está apontando para null
+            cout << "INFORME UM VALOR: ";
+            cin >> ptrTemp->valor; // armazena o novo valor no novo nó
+            ptrTemp->proximo = listaSimples; // o novo elemento agora aponta para o ex primeiro elemento da lista
+            listaSimples = ptrTemp; // atualiza a lista para apontar para o novo elemento, onde agora ele é o primeiro da lista
+        }
+    }
+}
 
+int main(){
+    criarLista();
+    adicionarElementoInicio();
     return 0;
 }
